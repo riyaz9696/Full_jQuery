@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Code Player Project using jQuery</title>
-  <script src="jquery.min.js" type="text/javascript"></script>
   <script src="jquery-ui/jquery-ui.js"></script>
   <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+  <script src="../jquery.min.js" type="text/javascript"></script>
+  
   <style type="text/css">
     body{
       font-family: sans-serif;
@@ -14,7 +15,7 @@
     #header{
       width: 100%;
       background-color: #EEEEEE;
-      padding: 5px;
+      padding: 10px;
       height: 30px;
     }
     #logo{
@@ -84,13 +85,13 @@
 <div id="bodyContainer">
   <textarea id="htmlPanel" class="panel"><p id="paragraph">Hello World!</p></textarea>
   <textarea id="cssPanel" class="panel hidden">p { color: green;}</textarea>
-  <textarea id="JavascriptPanel" class="panel hidden">document.getElementById("paragraph").innerHTML = "Hello Rob!";</textarea>
+  <textarea id="javascriptPanel" class="panel hidden">document.getElementById("paragraph").innerHTML = "Hello Rob!";</textarea>
   <iframe id="outputPanel" class="panel"></iframe>
 </div>
 <script type="text/javascript">
   function updateOutput(){
     $("iframe").contents().find("html").html("<html><head><style type='text/css'>"+$("#cssPanel").val() + "</style></head><body>"+ $("#htmlPanel").val()+ "</body></html>");
-    document.getElementById("outputPanel").contentWindow.eval($("#JavascriptPanel").val());
+    document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
     
   }
   $(".toggleButton").hover(function(){
